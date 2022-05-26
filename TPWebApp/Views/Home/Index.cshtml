@@ -1,0 +1,28 @@
+﻿@model IEnumerable<TPWebApp.Model.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Salary</th>
+        <th>Gender</th>
+        <th>Actions</th>
+    </tr>
+    @foreach(var emp in Model)
+            {
+                <tr>
+                    <td>@emp.Id</td>
+                    <td>@emp.Name</td>
+                    <td>@emp.Email</td>
+                    <td>@emp.Salary</td>
+                    <td>@emp.Gender</td>
+                    <td><a href="Home/Edit?id=@emp.Id"><i class="fa fa-edit"></i></a>
+                <a href="Home/Delete?id=@emp.Id"><i class="fa fa-trash"></i></a></td>
+                </tr>
+            }
+</table>
